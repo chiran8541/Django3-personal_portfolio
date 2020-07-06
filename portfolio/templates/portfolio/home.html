@@ -1,0 +1,28 @@
+{% extends 'portfolio/base.html' %}
+
+{% block content %}
+
+
+    <h1> Hi this is home page</h1>
+{% load static %}
+
+<a href="{% url 'blog:Blog Page' %}">Blog</a>
+
+
+<br>
+
+<img src="{% static 'portfolio/CJ.jpg' %}" height="280",width = "280"">
+
+<br>
+{% for project in projects %}
+<a>{{project.title}}</a>
+<p>{{project.description}}</p>
+<img src="{{ project.image.url }}" height="280",width = "280">
+<br>
+<h1>{{project.image.url}}</h1>
+
+
+{% endfor %}
+
+{% endblock %}   
+
